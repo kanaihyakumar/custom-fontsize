@@ -1,0 +1,9 @@
+<div class="font-size-input">
+    <input type="number" [(ngModel)]="fontSize" (input)="onFontSizeInput($event)" placeholder="Font Size">
+    <div class="dropdown">
+      <button class="dropdown-toggle" (click)="toggleDropdown()">0</button>
+      <ul class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
+        <li *ngFor="let size of fontSizes" (click)="selectFontSize(size)">{{ size }}</li>
+      </ul>
+    </div>
+  </div>
