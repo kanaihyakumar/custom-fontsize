@@ -1,0 +1,10 @@
+<div class="font-size-input">
+  <input type="number" inputmode="numeric" min="1" #fontSizeInput (keydown)="validateNumberInput($event)"
+    (input)="onFontSizeInput(fontSizeInput.value)">
+  <div class="dropdown">
+    <button class="dropdown-toggle" (click)="toggleDropdown()">0</button>
+    <ul class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
+      <li *ngFor="let size of fontSizes" (click)="selectFontSize(size)">{{ size }}</li>
+    </ul>
+  </div>
+</div>
